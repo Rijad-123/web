@@ -1,0 +1,64 @@
+
+<body class="bg-paper d-flex align-items-center">
+
+    <main class="container d-flex justify-content-center">
+      <div class="card shadow-sm auth-card w-100">
+        <div class="card-body p-4 p-md-5">
+          <div class="text-center mb-4">
+            <img src="logo.png" alt="Book Shop" width="48" height="48" class="rounded mb-2">
+            <h1 class="h4 mb-0">Create your account</h1>
+            <p class="text-muted mb-0">Join Book Shop in a minute</p>
+          </div>
+  
+          <form id="registerForm" novalidate>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="name" class="form-label">Full name</label>
+                <input id="name" type="text" class="form-control" placeholder="Jane Doe" required>
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+  
+              <div class="col-12">
+                <label for="email" class="form-label">Email address</label>
+                <input id="email" type="email" class="form-control" placeholder="you@example.com" required>
+                <div class="invalid-feedback">Please provide a valid email.</div>
+              </div>
+  
+              <div class="col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" type="password" class="form-control" placeholder="••••••••" minlength="6" required>
+                <div class="invalid-feedback">Password must be at least 6 characters.</div>
+              </div>
+  
+              <div class="col-md-6">
+                <label for="confirm" class="form-label">Confirm password</label>
+                <input id="confirm" type="password" class="form-control" placeholder="••••••••" minlength="6" required>
+                <div class="invalid-feedback">Passwords must match.</div>
+              </div>
+  
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required>
+                  <label class="form-check-label" for="terms">
+                    I agree to the <a href="#" class="link-secondary">Terms</a> & <a href="#" class="link-secondary">Privacy</a>.
+                  </label>
+                  <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <button type="submit" class="btn btn-brand w-100">Create account</button>
+              </div>
+  
+              <div class="col-12 text-center">
+                <p class="text-muted mb-0">
+                  Already have an account?
+                  <a href="login.html">Sign in</a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  

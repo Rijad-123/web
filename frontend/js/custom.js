@@ -22,6 +22,13 @@ app.route({
   load : "view_book.html",
 });
 
+app.route({
+  view : "view_register",
+  load : "view_register.html",
+ 
+});
+
+
 
 app.route({
   view : "view_login",
