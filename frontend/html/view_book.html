@@ -1,0 +1,129 @@
+  <main class="py-5 bg-paper">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <!-- Book image -->
+        <div class="col-12 col-lg-5">
+          <img src="https://picsum.photos/seed/bookdetail/600/800" alt="Book cover" class="img-fluid book-cover">
+        </div>
+
+        <!-- Book info -->
+        <div class="col-12 col-lg-7">
+          <h1 class="fw-bold mb-1">The Silent Library</h1>
+          <p class="text-muted mb-2">By <strong>Ana Kovac</strong></p>
+
+          <div class="rating mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+            <i class="bi bi-star"></i>
+            <span class="ms-2 text-muted">(3.5/5, 124 reviews)</span>
+          </div>
+
+          <p class="price mb-3">$18.00</p>
+
+          <p class="text-secondary">
+            A mysterious tale set in an abandoned library where time seems to stand still.
+            When a young historian stumbles upon a lost manuscript, secrets about her city’s past unravel page by page.
+          </p>
+
+          <div class="d-flex gap-3 align-items-center mt-4">
+            <input type="number" class="form-control w-auto" min="1" value="1">
+            <button class="btn btn-brand px-4">Add to Cart</button>
+          </div>
+
+          <ul class="list-unstyled mt-4 small text-muted">
+            <li><strong>ISBN:</strong> 978-3-16-148410-0</li>
+            <li><strong>Publisher:</strong> Horizon Books</li>
+            <li><strong>Year:</strong> 2025</li>
+            <li><strong>Format:</strong> Paperback</li>
+            <li><strong>Stock:</strong> In stock</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Description / Details Tabs -->
+      <div class="mt-5">
+        <ul class="nav nav-tabs" id="bookTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab">Description</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab">Details</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Reviews</button>
+          </li>
+        </ul>
+        <div class="tab-content border border-top-0 p-4 rounded-bottom bg-white" id="bookTabsContent">
+          <div class="tab-pane fade show active" id="desc" role="tabpanel">
+            <p>
+              The Silent Library is a captivating mystery novel exploring the thin line between memory and myth.
+              Each chapter draws the reader deeper into the labyrinth of forgotten knowledge and human obsession.
+            </p>
+          </div>
+          <div class="tab-pane fade" id="details" role="tabpanel">
+            <ul>
+              <li>Language: English</li>
+              <li>Pages: 352</li>
+              <li>Dimensions: 5.5 x 8.5 inches</li>
+              <li>ISBN-13: 978-3-16-148410-0</li>
+            </ul>
+          </div>
+          <div class="tab-pane fade" id="reviews" role="tabpanel">
+            <div class="border-bottom pb-3 mb-3">
+              <strong>Emily R.</strong> <span class="text-muted small">— March 2025</span>
+              <p class="mb-1">Beautifully written and hauntingly atmospheric. Couldn’t put it down!</p>
+            </div>
+            <div>
+              <strong>Marko T.</strong> <span class="text-muted small">— February 2025</span>
+              <p class="mb-0">A bit slow in the middle, but the ending was totally worth it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related books -->
+      <div class="mt-5">
+        <h3 class="h5 mb-3">You may also like</h3>
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img src="https://picsum.photos/seed/related1/600/800" class="card-img-top" alt="Book">
+              <div class="card-body p-2">
+                <h6 class="mb-1 small">City of Echoes</h6>
+                <p class="text-muted small mb-0">$16.50</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img src="https://picsum.photos/seed/related2/600/800" class="card-img-top" alt="Book">
+              <div class="card-body p-2">
+                <h6 class="mb-1 small">Notes on Time</h6>
+                <p class="text-muted small mb-0">$14.99</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img src="https://picsum.photos/seed/related3/600/800" class="card-img-top" alt="Book">
+              <div class="card-body p-2">
+                <h6 class="mb-1 small">Stars Beyond</h6>
+                <p class="text-muted small mb-0">$22.00</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img src="https://picsum.photos/seed/related4/600/800" class="card-img-top" alt="Book">
+              <div class="card-body p-2">
+                <h6 class="mb-1 small">Whispers of Glass</h6>
+                <p class="text-muted small mb-0">$19.75</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
