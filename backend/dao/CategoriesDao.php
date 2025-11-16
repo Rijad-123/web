@@ -12,15 +12,15 @@ class CategoriesDao extends BaseDao
     }
 
 
-    public function getBooksFromCategory($category)
+    public function getBooksFromCategory($CategoryName)
     {
         $sql = "SELECT b.*, c.CategoryName 
             FROM Books b 
             JOIN Categories c ON b.CategoryID = c.CategoryID 
-            WHERE c.CategoryName = :category";
+            WHERE c.CategoryName = :CategoryName";
 
         $statement = $this->connection->prepare($sql);
-        $statement->bindParam(':category', $category);
+        $statement->bindParam(':CategoryName', $CategoryName);
         $statement->execute();
 
         return $statement->fetchAll();

@@ -1,196 +1,55 @@
-<main class="py-5"> <div class="container"> <div class="row g-4"> <!-- Filters (left) --> <aside class="col-12 col-lg-3"> <div class="p-3 rounded filters"> <h2 class="h6">Filters</h2> <hr> <div class="mb-3"> <label class="form-label">Category</label> <div class="d-flex flex-wrap gap-2"> <a href="#" class="badge rounded-pill text-bg-light text-decoration-none">Fiction</a> <a href="#" class="badge rounded-pill text-bg-light text-decoration-none">Sci-Fi</a> <a href="#" class="badge rounded-pill text-bg-light text-decoration-none">Mystery</a> <a href="#" class="badge rounded-pill text-bg-light text-decoration-none">Non-fiction</a> <a href="#" class="badge rounded-pill text-bg-light text-decoration-none">Self-help</a> </div> </div>
-    <div class="mb-3">
-      <label class="form-label">Price range</label>
-      <div class="d-flex align-items-center gap-2">
-        <input type="number" class="form-control" placeholder="Min" min="0">
-        <span class="text-muted">—</span>
-        <input type="number" class="form-control" placeholder="Max" min="0">
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">Format</label>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="f1">
-        <label class="form-check-label" for="f1">Paperback</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="f2">
-        <label class="form-check-label" for="f2">Hardcover</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="f3">
-        <label class="form-check-label" for="f3">E-book</label>
-      </div>
-    </div>
-
-    <button class="btn btn-dark w-100">Apply filters</button>
-  </div>
-</aside>
-
-<!-- Grid (right) -->
-<section class="col-12 col-lg-9">
-  <!-- Results meta -->
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <p class="text-muted mb-0">Showing 12 of 128 results</p>
-    <div class="btn-group" role="group" aria-label="Grid density">
-      <button type="button" class="btn btn-outline-secondary btn-sm active">Grid</button>
-      <button type="button" class="btn btn-outline-secondary btn-sm">List</button>
-    </div>
-  </div>
-
-  <!-- Cards -->
-  <div class="row g-4">
-    <!-- Item -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover11/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">The Quiet Street</h5>
-          <p class="text-muted mb-2">Nora Ilic</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$17.50</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
+<section id="popular-books" class="bookshelf py-5 my-5" on>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-header align-center">
+          <h2 class="section-title">Our Collection</h2>
+          <input type="text" class="px-2 py-1 rounded" placeholder="Search a book by title..."
+            onkeypress="BookService.getBookByTitle()" id="book-searcher" />
         </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open The Quiet Street"></a>
-      </div>
-    </div>
 
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover12/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Orbit of Ash</h5>
-          <p class="text-muted mb-2">J. R. Vlahovic</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$21.00</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Orbit of Ash"></a>
-      </div>
-    </div>
+        <ul class="tabs" id="bookCategoryTabs">
+          <li data-tab-target="#all-genre" onclick="BookService.getAllBooks()" class="active tab">
+            All Genre
+          </li>
+          <li data-tab-target="#all-genre" class="tab" onclick="BookService.getBooksByCategory('Business')">
+            Business
+          </li>
+          <li data-tab-target="#all-genre" onclick="BookService.getBooksByCategory('Science Fiction')" class="tab">
+            Science Fiction
+          </li>
+          <li data-tab-target="#all-genre" onclick="BookService.getBooksByCategory('Romance')" class="tab">
+            Romance
+          </li>
+          <li data-tab-target="#all-genre" onclick="BookService.getBooksByCategory('Adventure')" class="tab">
+            Adventure
+          </li>
+          <li data-tab-target="#all-genre" onclick="BookService.getBooksByCategory('Fictional')" class="tab">
+            Fictional
+          </li>
+        </ul>
 
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover13/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Rivers Between</h5>
-          <p class="text-muted mb-2">Mehmet Aydin</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$15.90</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
+        <div class="tab-content">
+          <div id="all-genre" class="active">
+            <div class="row gap" id="bookshelf" "></div>
           </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Rivers Between"></a>
-      </div>
-    </div>
 
-    <!-- Row 2 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover14/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Between Pages</h5>
-          <p class="text-muted mb-2">Sara Mehic</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$19.00</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
+          <!-- Additional genre tabs will continue here -->
         </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Between Pages"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover15/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Last Light</h5>
-          <p class="text-muted mb-2">Amina Hrle</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$24.00</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Last Light"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover16/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Echo Chamber</h5>
-          <p class="text-muted mb-2">Ivan Krstic</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$18.90</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Echo Chamber"></a>
-      </div>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover17/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Paper Boats</h5>
-          <p class="text-muted mb-2">Elif Kaya</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$12.00</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Paper Boats"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover18/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Fog Over Hills</h5>
-          <p class="text-muted mb-2">Luka Marin</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$20.00</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Fog Over Hills"></a>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card book-card h-100 shadow-sm position-relative">
-        <img src="https://picsum.photos/seed/cover19/600/800" class="card-img-top" alt="Book cover">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">Tides & Tales</h5>
-          <p class="text-muted mb-2">Marko Sola</p>
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="price">$13.75</span>
-            <button class="btn btn-sm btn-brand">Add to cart</button>
-          </div>
-        </div>
-        <a href="#view_book" class="stretched-link" aria-label="Open Tides & Tales"></a>
+        <!--inner-tabs-->
       </div>
     </div>
   </div>
-
-  <!-- Pagination -->
-  <nav class="mt-4">
-    <ul class="pagination pagination-sm justify-content-center">
-      <li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
-      <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
 </section>
-</div>
 
-</div> </main>
+<script>
+  BookService.getAllBooks();
+</script>
+
+<script>
+  NavbarService.__init();
+</script>
+
+<script>
+  BookService.updateBooks();
+</script>

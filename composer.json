@@ -1,0 +1,20 @@
+{
+    "name": "root/web",
+    "require": {
+        "flightphp/core": "^3.17"
+    },
+    "require-dev": {
+        "flightphp/core": "^3.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "Root\\Web\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rijad-123",
+            "email": "rijad.graca@stu.ibu.edu.ba"
+        }
+    ]
+}
