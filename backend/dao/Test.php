@@ -7,4 +7,4 @@ require_once "CategoriesDao.php";
 $book = new BookDao();
 $category = new CategoriesDao();
 
-print_r($category->getBooksFromCategory('Fiction'));
+print_r($category->getBooksByCategory('Fiction'));

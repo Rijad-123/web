@@ -12,7 +12,7 @@ class CategoriesDao extends BaseDao
     }
 
 
-    public function getBooksFromCategory($CategoryName)
+    public function getBooksByCategory($CategoryName)
     {
         $sql = "SELECT b.*, c.CategoryName 
             FROM Books b 

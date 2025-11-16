@@ -1,11 +1,12 @@
 <?php
 
-require_once __DIR__ . "/../dao/CategoriesDao.php";
+
+require_once __DIR__ . "/../services/CategoriesService.php";
 
 
 
-Flight::route('GET /category/@CategoryName', function ($CategoryName) {
-    $dao = new CategoriesDao();
+Flight::route('GET /categories/@category', function ($CategoryName) {
+    $service = new CategoriesService();
 
-    Flight::json($dao->getBooksFromCategory($CategoryName));
+    Flight::json($service->getBooksByCategory($CategoryName));
 });

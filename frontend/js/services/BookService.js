@@ -2,6 +2,73 @@ let BookService = {
 
 
 
+    getBookByTitle: async function (BookTitle) {
+        if (!BookTitle.trim()) {
+            BookService.getAllBooks();
+            return;
+        }
+
+        fetch(Constants.API_BASE_URL + `books/title/${BookTitle}`)
+            .then((data) => { return data.json() })
+            .then((res) => {
+                const book_div = document.getElementById('bookshelf')
+                book_div.innerHTML = "";
+
+                if (!res || res.length === 0) {
+                    book_div.innerHTML = `
+                      <div class="text-center flex items-center justify-center">
+                          <p class ="text-lg font-lg" style="font-size:18px">
+                             Cannot find any books with name ${BookTitle}
+                          </p>
+                      </div>
+                  `
+                } else {
+                    res.forEach((book) => {
+                        const html = this.createBookCard(book);
+                        const temp = document.createElement('div');
+                        temp.innerHTML = html;
+                        book_div.appendChild(temp.firstElementChild);
+                    });
+                }
+            })
+    },
+
+    getBooksByCategory: async function (CategoryName) {
+
+        fetch(Constants.API_BASE_URL + `categories/${CategoryName}`)
+            .then((res) => { return res.json() })
+            .then((data) => {
+
+                if (!data || data.length === 0) {
+                    const book_div = document.getElementById('bookshelf');
+
+                    book_div.innerHTML = "";
+
+                    book_div.innerHTML = `
+                    <div class="text-center flex items-center justify-center">
+                        <p class ="text-lg font-lg" style="font-size:18px">
+                            No ${CategoryName} books found!
+                        <p>
+                    </div>
+                    `
+
+                    return;
+                }
+                const book_div = document.getElementById('bookshelf');
+
+                book_div.innerHTML = "";
+                data.forEach((book) => {
+                    const html = this.createBookCard(book);
+                    const temp = document.createElement('div');
+                    temp.innerHTML = html;
+                    book_div.appendChild(temp.firstElementChild);
+                });
+
+            }
+            )
+            .catch((error) => { console.error(error) });
+
+    },
 
     getAllBooks: async function () {
 

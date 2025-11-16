@@ -6,10 +6,8 @@ require __DIR__ . "/../vendor/autoload.php";
 
 
 // Routes
-require __DIR__ . '/routes/BookRoutes.php';
 require __DIR__ . '/routes/CategoriesRoutes.php';
-require __DIR__ . '/routes/OrderRoutes.php';
-
+require __DIR__ . '/routes/BookRoutes.php';
 
 
 Flight::route('/*', function () {

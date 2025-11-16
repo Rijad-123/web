@@ -1,12 +1,20 @@
 <?php
 
-require_once __DIR__ . '/BaseService.php';
+require_once __DIR__ . "/../dao/CategoriesDao.php";
+require_once __DIR__ . "/BaseService.php";
 
-
-class CategoriesService
+class CategoriesService extends BaseService
 {
-    public function getBooksFromCategory($category)
+
+    public function __construct()
     {
-        return $category;
+        $dao = new CategoriesDao();
+        return parent::__construct($dao);
+    }
+
+
+    public function getBooksByCategory($CategoryTitle)
+    {
+        return $this->dao->getBooksByCategory($CategoryTitle);
     }
 }

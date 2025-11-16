@@ -8,8 +8,6 @@ Flight::route('GET /books', function () {
 });
 
 
-
-
 Flight::route('GET /books/book/@id', function ($BookId) {
     $service = new BookService();
     Flight::json($service->getBookById($BookId));
@@ -20,5 +18,6 @@ Flight::route('GET /books/book/@id', function ($BookId) {
 
 Flight::route('GET /books/title/@title', function ($BookTitle) {
     $service = new BookService();
+
     Flight::json($service->getBookByTitle($BookTitle));
 });
