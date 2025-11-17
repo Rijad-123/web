@@ -11,7 +11,7 @@ class BookDao extends BaseDao
         parent::__construct($this->table_name);
     }
 
-    public function getBookByTitle($title)
+    public function getBookByTitle($BookTitle)
     {
         $sql = 'SELECT *
             FROM Books
@@ -20,7 +20,7 @@ class BookDao extends BaseDao
 
         $statement = $this->connection->prepare($sql);
 
-        $likeTitle = '%' . $title . '%';
+        $likeTitle = '%' . $BookTitle . '%';
 
         $statement->bindParam(':title', $likeTitle, PDO::PARAM_STR);
         $statement->execute();
@@ -28,5 +28,16 @@ class BookDao extends BaseDao
         return $statement->fetchAll();
     }
 
-    
+
+    public function getBookById($BookId)
+    {
+        $sql = "SELECT * FROM Books WHERE Books.BookID = :BookID";
+        
+        $statement = $this->connection->prepare($sql);
+
+        $statement->bindParam(':BookID', $BookId);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }

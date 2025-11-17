@@ -3,8 +3,8 @@ class Database
 {
     private static $host = 'localhost';
     private static $dbName = 'book_shop';
-    private static $username = 'root';
-    private static $password = '';
+    private static $username = 'rijadgraca';
+    private static $password = 'Password123';
     private static $connection = null;
 
     public static function connect()
@@ -20,12 +20,8 @@ class Database
                         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                     ]
                 );
-
-                if (self::$connection) {
-                    echo "Connection established.";
-                }
             } catch (PDOException $e) {
-                die("❌ Connection failed: " . $e->getMessage());
+                error_log("Database connection failed: " . $e->getMessage());
             }
         }
         return self::$connection;

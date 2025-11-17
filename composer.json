@@ -1,0 +1,22 @@
+{
+    "name": "root/web",
+    "require": {
+        "zircote/swagger-php": "3.3.7",
+        "flightphp/core": "^3.17"
+    },
+    "require-dev": {
+        "zircote/swagger-php": "3.3.7",
+        "flightphp/core": "^3.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "Root\\Web\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rijad-123",
+            "email": "rijad.graca@stu.ibu.edu.ba"
+        }
+    ]
+}
