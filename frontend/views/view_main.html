@@ -1,0 +1,458 @@
+<!-- Google Fonts Import for the Redesign -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+  rel="stylesheet">
+
+<style>
+  /* REDESIGN STYLES - OVERRIDING DEFAULT THEME */
+  :root {
+    --primary-color: #2c3e50;
+    --accent-color: #c0392b;
+    /* Bold Red for CTAs */
+    --gold: #d4af37;
+    --light-bg: #fdfbf7;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--light-bg);
+    color: #333;
+  }
+
+  /* 1. HERO / BILLBOARD REDESIGN */
+  #billboard {
+    background: #fff;
+    padding: 4rem 0;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+
+  #billboard .main-slider {
+    position: relative;
+    z-index: 2;
+  }
+
+  #billboard .slider-item {
+    display: flex !important;
+    flex-direction: row-reverse;
+    /* Swap image and text positions */
+    align-items: center;
+    justify-content: space-between;
+    min-height: 500px;
+  }
+
+  #billboard .banner-image {
+    width: 45%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: 20px 20px 0px var(--primary-color);
+    /* Stylistic shadow */
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+  }
+
+  #billboard .banner-image:hover {
+    filter: grayscale(0%);
+    transform: translate(-5px, -5px);
+    box-shadow: 25px 25px 0px var(--primary-color);
+  }
+
+  #billboard .banner-content {
+    width: 50%;
+    text-align: left;
+    padding-right: 2rem;
+  }
+
+  #billboard .banner-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  #billboard .banner-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  #billboard .btn-wrap a {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  #billboard .btn-wrap a:hover {
+    background-color: var(--gold);
+    color: #000;
+  }
+
+  /* Navigation Arrows Repositioning */
+  #billboard .slick-arrow {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #billboard .prev.slick-arrow {
+    margin-left: -60px;
+  }
+
+  #billboard .next.slick-arrow {
+    margin-left: 10px;
+  }
+
+  #billboard .slick-arrow:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+
+  /* 2. QUOTATION REDESIGN */
+  #quotation {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 6rem 0;
+    text-align: center;
+    margin: 0 !important;
+    /* Override standard margins */
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    /* Diagonal geometric cut */
+  }
+
+  #quotation .section-title {
+    color: var(--gold);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #quotation q {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    line-height: 1.4;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+
+  #quotation .author-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  /* 3. BLOG / ARTICLES REDESIGN (No Images, Added CTAs) */
+  #latest-blog {
+    padding: 6rem 0;
+  }
+
+  #latest-blog .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  #latest-blog .section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary-color);
+  }
+
+  #latest-blog .column {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 0;
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  #latest-blog .column:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Replaced Image Area with CTA Box */
+  #latest-blog figure {
+    margin: 0;
+    width: 100%;
+    height: 80px;
+    /* Minimal height */
+  }
+
+  #latest-blog figure .image-hvr-effect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    /* Red CTA background */
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  /* Creating the CTA Text using pseudo-element since we can't change HTML text easily inside the A tag */
+  #latest-blog figure .image-hvr-effect::after {
+    content: "READ NOW \2192";
+    /* Arrow symbol */
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+  }
+
+  #latest-blog figure .image-hvr-effect:hover {
+    background-color: var(--primary-color);
+  }
+
+  /* Hiding the old image tag completely */
+  #latest-blog .post-image {
+    display: none;
+  }
+
+  #latest-blog .post-item {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #latest-blog .meta-date {
+    font-size: 0.85rem;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  #latest-blog h3 a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    line-height: 1.3;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  #latest-blog h3 a:hover {
+    color: var(--accent-color);
+  }
+
+  #latest-blog .links-element {
+    margin-top: auto;
+    /* Push to bottom */
+    border-top: 1px dashed #ddd;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #latest-blog .categories {
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  #latest-blog .social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  #latest-blog .social-links i {
+    color: #ccc;
+    transition: 0.2s;
+  }
+
+  #latest-blog .social-links i:hover {
+    color: var(--primary-color);
+  }
+</style>
+
+<section id="billboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-slider pattern-overlay">
+          <div class="slider-item">
+            <!-- Swapped Visual Order via CSS, kept HTML structure -->
+            <div class="banner-content">
+              <h2 class="banner-title">Curated Knowledge.</h2>
+              <p>
+                We are BookSaw. We carry a heritage of over 1500+ rare and modern titles.
+                Whether you seek knowledge or escape, our collection is curated for the discerning reader.
+              </p>
+              <div class="btn-wrap">
+                <a href="#view_books">Explore Library</a>
+              </div>
+            </div>
+            <img src="images/y648.jpg" alt="banner" class="banner-image" />
+          </div>
+        </div>
+
+        <!-- Arrows moved to bottom center via CSS -->
+        <button class="prev slick-arrow">
+          <i class="icon icon-arrow-left"></i>
+        </button>
+        <button class="next slick-arrow">
+          <i class="icon icon-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quotation" class="align-center pb-5 mt-5 mb-5">
+  <div class="inner-content">
+    <h2 class="section-title mt-5 divider">Daily Inspiration</h2>
+
+    <q>“The more that you read, the more things you will know. The more that you
+      learn, the more places you’ll go.”</q>
+    <div class="author-name">— Dr. Seuss</div>
+  </div>
+</section>
+
+<section id="latest-blog" class="py-5 my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-header align-center">
+          <div class="title">
+            <span>Editorial</span>
+          </div>
+          <h2 class="section-title">Journal & Insights</h2>
+        </div>
+
+        <div class="row">
+          <!-- Article 1 -->
+          <div class="col-md-4">
+            <article class="column">
+              <figure>
+                <!-- Image Removed via CSS display:none, Container repurposed as CTA button -->
+                <a href="#" class="image-hvr-effect">
+                  <!-- CSS injects "READ NOW" text here -->
+                  <img src="images/post-img1.jpg" alt="post" class="post-image" />
+                </a>
+              </figure>
+
+              <div class="post-item">
+                <div class="meta-date">Mar 30, 2021</div>
+                <h3>
+                  <a href="#">Reading books always makes the moments happy</a>
+                </h3>
+
+                <div class="links-element">
+                  <div class="categories">Perspective</div>
+                  <div class="social-links">
+                    <ul>
+                      <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon icon-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="col-md-4">
+            <article class="column">
+              <figure>
+                <a href="#" class="image-hvr-effect">
+                  <img src="images/post-img2.jpg" alt="post" class="post-image" />
+                </a>
+              </figure>
+              <div class="post-item">
+                <div class="meta-date">Mar 29, 2021</div>
+                <h3>
+                  <a href="#">The Magic Between the Pages: How Books Shape Our World</a>
+                </h3>
+
+                <div class="links-element">
+                  <div class="categories">Culture</div>
+                  <div class="social-links">
+                    <ul>
+                      <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon icon-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="col-md-4">
+            <article class="column">
+              <figure>
+                <a href="#" class="image-hvr-effect">
+                  <img src="images/post-img3.jpg" alt="post" class="post-image" />
+                </a>
+              </figure>
+              <div class="post-item">
+                <div class="meta-date">Feb 27, 2021</div>
+                <h3>
+                  <a href="#">Journeys Through Words: Books That Change Lives</a>
+                </h3>
+
+                <div class="links-element">
+                  <div class="categories">History</div>
+                  <div class="social-links">
+                    <ul>
+                      <li><a href="#"><i class="icon icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon icon-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  NavbarService.__init();
+</script>
+
+<script>
+  CartService.initializeCart();
+</script>

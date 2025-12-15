@@ -1,0 +1,79 @@
+<section id="admin" class="min-vh-100 bg-light">
+  <div class="container py-5">
+
+    <!-- Header -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-2">
+        <div class="rounded-circle bg-danger me-3" style="width: 12px; height: 12px;"></div>
+        <h1 class="fw-bold mb-0 text-dark">Admin Dashboard</h1>
+      </div>
+      <p class="text-muted">Manage orders and monitor store activity</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-4 mb-5">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <div class="text-muted small fw-medium mb-1">Total Orders</div>
+            <div class="h3 fw-bold text-dark mb-0">127</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <div class="text-muted small fw-medium mb-1">Pending</div>
+            <div class="h3 fw-bold text-danger mb-0">8</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <div class="text-muted small fw-medium mb-1">Revenue</div>
+            <div class="h3 fw-bold text-dark mb-0">$12,450</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order History Table -->
+    <div class="card shadow-sm border-0 overflow-hidden">
+      <div class="card-header bg-white border-bottom py-3 px-4">
+        <h2 class="h2 fw-bold mb-0 text-dark">Order History</h2>
+      </div>
+
+      <div class="table-responsive">
+        <table id="ordersTable" class="table px-4 table-hover table-striped mb-0 text-nowrap">
+          <thead class="table-light px-4">
+            <tr>
+              <th scope="col" class=" text-uppercase small text-muted">Order ID</th>
+              <th scope="col" class=" text-uppercase small text-muted">User</th>
+              <th scope="col" class=" text-uppercase small text-muted">Book Title</th>
+
+              <th scope="col" class="text-uppercase small text-muted">Order Total</th>
+            </tr>
+          </thead>
+          <tbody class="border-top-0 p-16 px-5">
+            <!-- Data will be populated by AdminService -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  if (typeof NavbarService !== 'undefined') {
+    NavbarService.__init();
+  }
+
+  AdminService.initializeOrdersTable();
+</script>

@@ -11,14 +11,126 @@ class OrdersDao extends BaseDao
         parent::__construct($this->table_name);
     }
 
-    public function getOrders()
+    public function getAllOrders()
     {
-        $sql = "SELECT * FROM Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID";
+        $sql = "
+            SELECT
+                Orders.OrderID AS orders_id,
+                Orders.UserID AS orders_user_id,
+                Orders.TotalAmount AS orders_total_amount,
+                Orders.OrderDate AS orders_order_date,
 
-        $statement = $this->connection->prepare($sql);
+                Users.UsersID AS users_id,
+                Users.Name AS users_name,
+                Users.Email AS users_email,
+                Users.IsAdmin AS users_is_admin,
 
-        $statement->execute();
+                OrderDetails.OrderDetailID AS order_details_id,
+                OrderDetails.OrderID AS order_details_order_id,
+                OrderDetails.BookID AS order_details_book_id,
+                OrderDetails.Quantity AS order_details_quantity,
+                OrderDetails.Price AS order_details_price,
 
-        return $statement->fetchAll();
+                Books.BookID AS books_id,
+                Books.Title AS books_title,
+                Books.Author AS books_author,
+                Books.Price AS books_price
+
+            FROM Orders
+            INNER JOIN Users ON Orders.UserID = Users.UsersID
+            INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+            INNER JOIN Books ON OrderDetails.BookID = Books.BookID
+            ORDER BY Orders.OrderID ASC
+        ";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+    public function createOrder($userId, $totalAmount, $orderItems = [])
+    {
+        // Insert the order
+        $sql = "INSERT INTO Orders (UserID, TotalAmount, OrderDate) VALUES (:user_id, :total_amount, NOW())";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':total_amount', $totalAmount);
+        $stmt->execute();
+
+        // Get the last inserted order ID
+        $orderId = $this->connection->lastInsertId();
+
+        // Insert order items
+        if (!empty($orderItems)) {
+            $sql = "INSERT INTO OrderDetails (OrderID, BookID, Quantity, Price) VALUES (:order_id, :book_id, :quantity, :price)";
+            $stmt = $this->connection->prepare($sql);
+
+            foreach ($orderItems as $item) {
+                $stmt->bindParam(':order_id', $orderId, PDO::PARAM_INT);
+                $stmt->bindParam(':book_id', $item['BookID'], PDO::PARAM_INT);
+                $stmt->bindParam(':quantity', $item['Quantity'], PDO::PARAM_INT);
+                $stmt->bindParam(':price', $item['Price']);
+                $stmt->execute();
+            }
+        }
+
+        return $orderId;
+    }
+
+
+    public function getOrderById($orderId)
+    {
+        $sql = "
+            SELECT
+                o.OrderID as order_id,
+                o.UserID as user_id,
+                o.TotalAmount as total_amount,
+                o.OrderDate as order_date,
+                od.OrderDetailID as detail_id,
+                od.BookID as book_id,
+                od.Quantity as quantity,
+                od.Price as price,
+                b.Title as book_title,
+                b.Author as book_author
+            FROM Orders o
+            LEFT JOIN OrderDetails od ON o.OrderID = od.OrderID
+            LEFT JOIN Books b ON od.BookID = b.BookID
+            WHERE o.OrderID = :order_id
+        ";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':order_id', $orderId, PDO::PARAM_INT);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (empty($results)) {
+            return null;
+        }
+
+        // Format the response
+        $order = [
+            'OrderID' => $results[0]['order_id'],
+            'UserID' => $results[0]['user_id'],
+            'TotalAmount' => $results[0]['total_amount'],
+            'OrderDate' => $results[0]['order_date'],
+            'items' => []
+        ];
+
+        foreach ($results as $row) {
+            if ($row['detail_id']) {
+                $order['items'][] = [
+                    'OrderDetailID' => $row['detail_id'],
+                    'BookID' => $row['book_id'],
+                    'BookTitle' => $row['book_title'],
+                    'BookAuthor' => $row['book_author'],
+                    'Price' => $row['price'],
+                    'Quantity' => $row['quantity']
+                ];
+            }
+        }
+
+        return $order;
     }
 }

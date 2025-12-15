@@ -23,7 +23,7 @@ class BaseDao
 
     public function getById($id)
     {
-        $statement = $this->connection->prepare('SELECT * FROM ' . $this->table_name . ' WHERE id = :id');
+        $statement = $this->connection->prepare('SELECT * FROM ' . $this->table_name . ' WHERE ' . $this->table_name . 'ID = :id');
         $statement->bindParam(':id', $id);
         $statement->execute();
 
@@ -51,6 +51,20 @@ class BaseDao
         $statement->execute();
 
         return $this->getById($this->connection->lastInsertId());
+    }
+
+
+    protected function query($query, $params)
+    {
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    protected function query_unique($query, $params)
+    {
+        $results = $this->query($query, $params);
+        return reset($results);
     }
 
     public function update($entity, $id)
