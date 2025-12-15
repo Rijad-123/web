@@ -94,26 +94,30 @@
 
 <header id="header">
 	<div class="container-fluid">
-		<div class="row d-flex align-items-center justify-content-between">
+		<!-- Added 'align-items-center' to vertically center logo and text -->
+		<div class="row d-flex align-items-center">
+
 			<!-- Left Side: Logo -->
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div class="main-logo">
-					<img src="./images/main-logo.png" alt="logo" class="img-fluid">
+					<!-- Changed h1 to a link for better UX, usually points home -->
+					<a href="/" class="logo-link">MyBookShop</a>
 				</div>
 			</div>
 
+			<!-- Right Side: Navigation -->
+			<!-- Moved this DIV inside the .row -->
+			<div class="col-md-9">
+				<!-- added justify-content-end to push menu to the right -->
+				<nav id="navbar" class="d-flex justify-content-end">
+					<!-- Your NavbarService likely injects links here. 
+                Ensure it generates <ul> or <a> tags. -->
+				</nav>
+			</div>
 
-		</div>
-	</div>
-
-
-	<div class="col-md-10">
-		<nav id="navbar">
-
-		</nav>
+		</div> <!-- End Row -->
 	</div>
 </header>
-
 
 
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">

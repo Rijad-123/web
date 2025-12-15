@@ -3,50 +3,8 @@ let BookService = {
     RestClient.get(
       "books",
       function (data) {
-
         console.log(data);
-
-
-        $(document).ready(function () {
-          const bookshelf = document.getElementById("bookshelf");
-          bookshelf.innerHTML = "";
-          const isLoggedIn = LoginService.isUserLoggedIn();
-
-          for (book of data) {
-            const addToCartButton = isLoggedIn
-              ? `<button class="btn btn-primary btn-sm mt-2 w-100" onclick="BookService.addBookToCart(${book.BookID})">
-                   <i class="fas fa-cart-plus"></i> Add to Cart
-                 </button>`
-              : '';
-
-            bookshelf.innerHTML += `
-
-
-            <div class="col-md-3 text-center">
-            <div class="product-item">
-            <figure class="product-style">
-            <img
-            src="https://covers.openlibrary.org/b/isbn/${book.ISBN}-L.jpg"
-            alt="Books"
-            class="product-item"
-            />
-
-            </figure>
-            <figcaption>
-            <h3>${book.Title}</h3>
-            <span>${book.Author}</span>
-            <div class="item-price">$${book.Price}</div>
-            </figcaption>
-              <a href= "#view_book" onclick="BookService.getBookById(${book.BookID})">
-            View More
-            </a>
-            ${addToCartButton}
-            </div>
-            </div>
-
-            `;
-          }
-        });
+        BookService.renderBooks(data);
       },
       function (error) {
         console.error(error);
@@ -61,65 +19,22 @@ let BookService = {
     }
 
     RestClient.get(`categories/${categoryName}`, function (data) {
+      const bookshelf = document.getElementById("bookshelf");
 
-
-
-      $(document).ready(function () {
-        const bookshelf = document.getElementById("bookshelf");
-
-        bookshelf.innerHTML = "";
-
-
-
-        if (data.length === 0) {
-          bookshelf.innerHTML = `
-        <div class="col-12">
+      if (data.length === 0) {
+        bookshelf.innerHTML = `
+          <div class="col-12">
             <div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
-                <h1 class="text-muted">
-                    There are no books in the ${categoryName} category.
-                </h1>
+              <h1 class="text-muted">
+                There are no books in the ${categoryName} category.
+              </h1>
             </div>
-        </div>
-    `;
-          return; // Don't forget to return so the loop doesn't run!
-        }
+          </div>
+        `;
+        return;
+      }
 
-        const isLoggedIn = LoginService.isUserLoggedIn();
-
-        for (book of data) {
-          const addToCartButton = isLoggedIn
-            ? `<button class="btn btn-primary btn-sm mt-2 w-100" onclick="BookService.addBookToCart(${book.BookID})">
-                 <i class="fas fa-cart-plus"></i> Add to Cart
-               </button>`
-            : '';
-
-          bookshelf.innerHTML += `
-
-            <div class="col-md-3 text-center">
-            <div class="product-item">
-            <figure class="product-style">
-            <img
-            src="https://covers.openlibrary.org/b/isbn/${book.ISBN}-L.jpg"
-            alt="Books"
-            class="product-item"
-            />
-
-            </figure>
-            <figcaption>
-            <h3>${book.Title}</h3>
-            <span>${book.Author}</span>
-            <div class="item-price">$${book.Price}</div>
-            </figcaption>
-              <a href= "#view_book" onclick="BookService.getBookById(${book.BookID})">
-            View More
-            </a>
-            ${addToCartButton}
-            </div>
-            </div>
-
-          `;
-        }
-      });
+      BookService.renderBooks(data);
     });
   },
 
@@ -264,28 +179,8 @@ let BookService = {
     });
   },
 
-  deleteBook: function (book_ID) {
-    console.log("Deleting book with ID:", book_ID);
-    const userToken = localStorage.getItem("user_token");
 
-    $.ajax({
-      url: `http://web-project-ajna.local/api/admin/book/id/${book_ID}`,
-      type: "DELETE",
-      headers: {
-        Authentication: `${userToken}`,
-      },
-
-      success: function (response) {
-        toastr.success("Book deleted successfully");
-        console.log("Resource deleted successfully:", response);
-      },
-
-      error: function () {
-        toastr.success("Book deleted successfully");
-        console.log("Resource deleted successfully:", response);
-      },
-    });
-  },
+  
 
   updateBooks: function () {
     $("#bookCategoryTabs li").click(function () {
@@ -320,148 +215,44 @@ let BookService = {
 
   renderBooks: function (books) {
     const bookshelf = document.getElementById("bookshelf");
-
     bookshelf.innerHTML = "";
 
     const isLoggedIn = LoginService.isUserLoggedIn();
 
-    for (book of books) {
+    for (const book of books) {
+      // Logic to determine if button should show
       const addToCartButton = isLoggedIn
-        ? `<button class="btn btn-primary btn-sm mt-2 w-100" onclick="BookService.addBookToCart(${book.BookID})">
-             <i class="fas fa-cart-plus"></i> Add to Cart
-           </button>`
+        ? `<button class="btn-add-cart" onclick="BookService.addBookToCart(${book.BookID})">
+                 <i class="fas fa-cart-plus"></i> Add to Cart
+               </button>`
         : '';
 
       bookshelf.innerHTML += `
-
-      <div class="col-md-3 text-center" data-id="${book.BookID}">
-      <div class="product-item">
-      <figure class="product-style">
-      <img
-      src="https://covers.openlibrary.org/b/isbn/${book.ISBN}-L.jpg"
-      alt="Books"
-      class="product-item"
-      />
-
-      </figure>
-      <figcaption>
-      <h3>${book.Title}</h3>
-      <span>${book.Author}</span>
-      <div class="item-price">$${book.Price}</div>
-      </figcaption>
-          <a href= "#view_book" onclick="BookService.getBookById(${book.BookID})">
-        View More
-        </a>
-        ${addToCartButton}
-      </div>
-      </div>
-
-      `;
-    }
-  },
-
-  editBookById: function (book_ID) {
-    RestClient.get(`book/id/${book_ID}`, function (book) {
-      const existingModal = document.getElementById("editBookModal");
-      if (existingModal) existingModal.remove();
-
-      const modalHTML = `
-        <div class="modal fade p-5" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-              <form id="editBookForm" enctype="multipart/form-data">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editBookModalLabel">Edit Book: ${book.title}</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-md-5 text-center">
-                      <img id="edit-book-image-preview" src="${book.image_url}" alt="${book.title}" class="img-fluid rounded mb-3" style="max-height:200px;" />
-                    </div>
-                    <div class="col-md-7">
-                      <div class="mb-3">
-                        <label for="edit-book-title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="edit-book-title" name="title" value="${book.title}" required>
-                      </div>
-                      <div class="mb-3">
-                        <label for="edit-book-author" class="form-label">Author</label>
-                        <input type="text" class="form-control" id="edit-book-author" name="author" value="${book.author}" required>
-                      </div>
-                      <div class="mb-3">
-                        <label for="edit-book-description" class="form-label">Description</label>
-                        <textarea class="form-control" id="edit-book-description" name="description" rows="4" required>${book.description}</textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">Save Changes</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                </div>
-              </form>
+        <div class="book-card">
+          <div class="book-cover" onclick="BookService.getBookById(${book.BookID})">
+            <img
+              src="https://covers.openlibrary.org/b/isbn/${book.ISBN}-L.jpg"
+              alt="${book.Title}"
+              onerror="this.src='https://via.placeholder.com/150x220?text=No+Cover'"
+            />
+          </div>
+          <div class="book-info">
+            <h3 class="book-title">${book.Title}</h3>
+            <p class="book-author">${book.Author}</p>
+            <div class="book-price">$${book.Price}</div>
+            <div class="book-actions">
+              <button class="btn-details" onclick="BookService.getBookById(${book.BookID})">
+                View Details
+              </button>
+              ${addToCartButton}
             </div>
           </div>
         </div>
       `;
-
-      document.body.insertAdjacentHTML("beforeend", modalHTML);
-
-      document
-        .getElementById("editBookForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          let data = {
-            title: document.getElementById("edit-book-title").value,
-            author: document.getElementById("edit-book-author").value,
-            description: document.getElementById("edit-book-description").value,
-          };
-
-          const userToken = localStorage.getItem("user_token");
-
-          console.log(data.title);
-          console.log(data.author);
-          console.log(data.description);
-          console.log("Book ID to update:", book_ID);
-          console.log(document.getElementById("edit-book-title").value);
-          console.log(document.getElementById("edit-book-author").value);
-          console.log(document.getElementById("edit-book-description").value);
-          console.log("Book ID to update:", book_ID);
-
-          $.ajax({
-            url: `http://web-project-ajna.local/api/admin/update/book/${book_ID}`,
-            type: "PATCH",
-            headers: {
-              Authentication: `${userToken}`,
-              "Content-Type": "application/json",
-            },
-            data: JSON.stringify({
-              title: document.getElementById("edit-book-title").value,
-              author: document.getElementById("edit-book-author").value,
-              description: document.getElementById("edit-book-description")
-                .value,
-            }),
-
-            success: function (response) {
-              toastr.success("Book updated successfully");
-              console.log("Resource updated successfully:", response);
-            },
-
-            error: function (response) {
-              toastr.success("Book updated successfully");
-              console.log("Resource updated successfully:", response);
-            },
-          });
-        });
-
-      // Show modal
-      const modal = new bootstrap.Modal(
-        document.getElementById("editBookModal")
-      );
-      modal.show();
-    });
+    }
   },
+
+
 
   // Add book to cart with default quantity of 1
   addBookToCart: function (bookId) {

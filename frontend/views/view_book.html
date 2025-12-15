@@ -17,3 +17,104 @@
 <script>
   CartService.getCartId();
 </script>
+
+
+<style>
+  /* Minimalist Card Style */
+  .minimal-book-card {
+    border: 1px solid #f0f0f0;
+    /* Very subtle border */
+    border-radius: 8px;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+  }
+
+  .minimal-book-card:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: #e6e6e6;
+  }
+
+  /* Image Handling - Keeps uniform height */
+  .book-img-wrapper {
+    height: 240px;
+    /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    /* Light grey background for missing images */
+    padding: 15px;
+    cursor: pointer;
+  }
+
+  .book-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* Ensures cover shows fully without cropping */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Tiny shadow on the book itself */
+  }
+
+  /* Typography */
+  .book-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+
+    /* Truncate text after 2 lines to keep cards even */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.4em;
+    /* Enforces height for 2 lines */
+  }
+
+  .book-author {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    /* Grey text */
+    margin-bottom: 10px;
+  }
+
+  .book-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0d6efd;
+    /* Bootstrap Blue */
+    margin-bottom: 15px;
+  }
+
+  /* Links and Buttons */
+  .view-details-link {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+  }
+
+  .view-details-link:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+  }
+
+  /* Override Bootstrap Primary Button for a cleaner look */
+  .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    font-weight: 500;
+    padding: 8px;
+  }
+
+  .btn-primary:hover {
+    background-color: #0b5ed7;
+  }
+</style>

@@ -33,7 +33,54 @@ Flight::route('GET /admin/orders', function () {
         Flight::json(['success' => false, 'error' => $e->getMessage()], 500);
     }
 });
+/**
+ * @OA\Get(
+ *     path="/admin/stats",
+ *     operationId="getTotalStats",
+ *     tags={"Admin Orders"},
+ *     summary="Get total order statistics",
+ *     description="Retrieves the total number of orders placed and the total revenue generated. Requires admin authentication.",
+ *     security={{"bearerAuth":{}}},
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successfully retrieved statistics",
+ *         @OA\JsonContent(
+ *             type="object",
+ *             @OA\Property(
+ *                 property="total_orders", 
+ *                 type="integer", 
+ *                 example=127,
+ *                 description="Total count of orders in the system"
+ *             ),
+ *             @OA\Property(
+ *                 property="total_revenue", 
+ *                 type="number", 
+ *                 format="float", 
+ *                 example=12450.00,
+ *                 description="Total sum of all order amounts"
+ *             )
+ *         )
+ *     ),
+ *     @OA\Response(
+ *         response=403,
+ *         description="Forbidden - Admin access required"
+ *     ),
+ *     @OA\Response(
+ *         response=500,
+ *         description="Server error"
+ *     )
+ * )
+ */
+Flight::route('GET /admin/stats', function () {
+    try {
+        $service = new OrdersService();
+        $stats = $service->getTotalStats();
 
+        Flight::json($stats);
+    } catch (Exception $e) {
+        Flight::json(['success' => false, 'error' => $e->getMessage()], 500);
+    }
+});
 /**
  * @OA\Get(
  *     path="/admin/orders/{id}",

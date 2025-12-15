@@ -1,79 +1,80 @@
-<section id="admin" class="min-vh-100 bg-light">
-  <div class="container py-5">
+<div class="container py-5">
 
-    <!-- Header -->
-    <div class="mb-5">
-      <div class="d-flex align-items-center mb-2">
-        <div class="rounded-circle bg-danger me-3" style="width: 12px; height: 12px;"></div>
-        <h1 class="fw-bold mb-0 text-dark">Admin Dashboard</h1>
-      </div>
-      <p class="text-muted">Manage orders and monitor store activity</p>
-    </div>
+  <!-- Header Section -->
+  <div class="mb-5">
+    <h1 style="font-family: serif; font-weight: 700; color: #2c3e50; margin-bottom: 0.5rem;">Admin Dashboard</h1>
+    <p class="text-muted" style="font-size: 1.1rem;">Manage orders and monitor store activity</p>
+  </div>
 
-    <!-- Stats Cards -->
-    <div class="row g-4 mb-5">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 h-100">
-          <div class="card-body p-4">
-            <div class="text-muted small fw-medium mb-1">Total Orders</div>
-            <div class="h3 fw-bold text-dark mb-0">127</div>
-          </div>
-        </div>
-      </div>
+  <!-- Stats Row (Restored Grid Layout) -->
+  <div class="row g-4 mb-5">
 
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 h-100">
-          <div class="card-body p-4">
-            <div class="text-muted small fw-medium mb-1">Pending</div>
-            <div class="h3 fw-bold text-danger mb-0">8</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 h-100">
-          <div class="card-body p-4">
-            <div class="text-muted small fw-medium mb-1">Revenue</div>
-            <div class="h3 fw-bold text-dark mb-0">$12,450</div>
-          </div>
+    <!-- Card 1: Total Orders -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm"
+        style="background: #fff; border-radius: 12px; transition: transform 0.2s;">
+        <div class="card-body p-4">
+          <div class="text-muted small fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">Total Orders</div>
+          <div id="totalOrders" style="font-size: 2.5rem; font-weight: 800; color: #111;">--</div>
         </div>
       </div>
     </div>
 
-    <!-- Order History Table -->
-    <div class="card shadow-sm border-0 overflow-hidden">
-      <div class="card-header bg-white border-bottom py-3 px-4">
-        <h2 class="h2 fw-bold mb-0 text-dark">Order History</h2>
+    <!-- Card 2: Pending (Static based on your screenshot) -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm"
+        style="background: #fff; border-radius: 12px; transition: transform 0.2s;">
+        <div class="card-body p-4">
+          <div class="text-muted small fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">Pending</div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #dc3545;">8</div>
+        </div>
       </div>
+    </div>
 
-      <div class="table-responsive">
-        <table id="ordersTable" class="table px-4 table-hover table-striped mb-0 text-nowrap">
-          <thead class="table-light px-4">
-            <tr>
-              <th scope="col" class=" text-uppercase small text-muted">Order ID</th>
-              <th scope="col" class=" text-uppercase small text-muted">User</th>
-              <th scope="col" class=" text-uppercase small text-muted">Book Title</th>
-
-              <th scope="col" class="text-uppercase small text-muted">Order Total</th>
-            </tr>
-          </thead>
-          <tbody class="border-top-0 p-16 px-5">
-            <!-- Data will be populated by AdminService -->
-          </tbody>
-        </table>
+    <!-- Card 3: Revenue -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm"
+        style="background: #fff; border-radius: 12px; transition: transform 0.2s;">
+        <div class="card-body p-4">
+          <div class="text-muted small fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">Revenue</div>
+          <div id="totalRevenue" style="font-size: 2.5rem; font-weight: 800; color: #0d6efd;">--</div>
+        </div>
       </div>
     </div>
 
   </div>
-</section>
+  <!-- End Stats Row -->
 
+  <!-- Order History Table Section -->
+  <div class="card border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+    <div class="card-header bg-white p-4 border-bottom-0">
+      <h4 class="mb-0" style="font-family: serif; font-weight: 700; color: #2c3e50;">Order History</h4>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table mb-0" id="ordersTable">
+        <thead style="background-color: #f8f9fa;">
+          <tr>
+            <th scope="col">ORDER ID</th>
+            <th scope="col">USER</th>
+            <th scope="col">BOOK TITLE</th>
+            <th scope="col">ORDER TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JavaScript will inject grouped rows here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Auto-Initialize Scripts -->
 <script>
-  if (typeof NavbarService !== 'undefined') {
-    NavbarService.__init();
+  // Ensure the service is loaded before calling
+  if (typeof AdminService !== 'undefined') {
+    AdminService.initializeTotalStats();
+    AdminService.initializeOrdersTable();
   }
-
-  AdminService.initializeOrdersTable();
 </script>

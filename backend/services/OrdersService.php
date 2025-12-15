@@ -17,6 +17,10 @@ class OrdersService extends BaseService
         return $this->dao->getAllOrders();
     }
 
+    public function getTotalStats()
+    {
+        return $this->dao->getTotalStats();
+    }
     public function createOrder($userId, $totalAmount, $orderItems = [])
     {
         return $this->dao->createOrder($userId, $totalAmount, $orderItems);

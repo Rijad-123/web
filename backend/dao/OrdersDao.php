@@ -79,6 +79,23 @@ class OrdersDao extends BaseDao
         return $orderId;
     }
 
+    public function getTotalStats()
+    {
+        // COUNT(*) gets total orders
+        // SUM(TotalAmount) gets total revenue
+        // COALESCE ensures we return 0 instead of NULL if the table is empty
+        $sql = "SELECT 
+                COUNT(*) as total_orders, 
+                COALESCE(SUM(TotalAmount), 0) as total_revenue 
+            FROM Orders";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+
+        // fetch(PDO::FETCH_ASSOC) returns an array like: ['total_orders' => 5, 'total_revenue' => 120.50]
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
 
     public function getOrderById($orderId)
     {
