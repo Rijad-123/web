@@ -1,0 +1,80 @@
+<div class="container py-5">
+
+  <!-- Header Section -->
+  <div class="mb-5">
+    <h1 style="font-family: serif; font-weight: 700; color: #2c3e50; margin-bottom: 0.5rem;">Admin Dashboard</h1>
+    <p class="text-muted" style="font-size: 1.1rem;">Manage orders and monitor store activity</p>
+  </div>
+
+  <!-- Stats Row (Restored Grid Layout) -->
+  <div class="row g-4 mb-5">
+
+    <!-- Card 1: Total Orders -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm"
+        style="background: #fff; border-radius: 12px; transition: transform 0.2s;">
+        <div class="card-body p-4">
+          <div class="text-muted small fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">Total Orders</div>
+          <div id="totalOrders" style="font-size: 2.5rem; font-weight: 800; color: #111;">--</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Pending (Static based on your screenshot) -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm"
+        style="background: #fff; border-radius: 12px; transition: transform 0.2s;">
+        <div class="card-body p-4">
+          <div class="text-muted small fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">Pending</div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: #dc3545;">8</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Revenue -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm"
+        style="background: #fff; border-radius: 12px; transition: transform 0.2s;">
+        <div class="card-body p-4">
+          <div class="text-muted small fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">Revenue</div>
+          <div id="totalRevenue" style="font-size: 2.5rem; font-weight: 800; color: #0d6efd;">--</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End Stats Row -->
+
+  <!-- Order History Table Section -->
+  <div class="card border-0 shadow-sm" style="border-radius: 12px; overflow: hidden;">
+    <div class="card-header bg-white p-4 border-bottom-0">
+      <h4 class="mb-0" style="font-family: serif; font-weight: 700; color: #2c3e50;">Order History</h4>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table mb-0" id="ordersTable">
+        <thead style="background-color: #f8f9fa;">
+          <tr>
+            <th scope="col">ORDER ID</th>
+            <th scope="col">USER</th>
+            <th scope="col">BOOK TITLE</th>
+            <th scope="col">ORDER TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JavaScript will inject grouped rows here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Auto-Initialize Scripts -->
+<script>
+  // Ensure the service is loaded before calling
+  if (typeof AdminService !== 'undefined') {
+    AdminService.initializeTotalStats();
+    AdminService.initializeOrdersTable();
+  }
+</script>
