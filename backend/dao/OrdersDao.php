@@ -4,7 +4,7 @@ require_once __DIR__ . '/BaseDao.php';
 
 class OrdersDao extends BaseDao
 {
-    protected $table_name = 'Orders';
+    protected $table_name = 'orders';
 
     public function __construct()
     {
@@ -15,32 +15,32 @@ class OrdersDao extends BaseDao
     {
         $sql = "
             SELECT
-                Orders.OrderID AS orders_id,
-                Orders.UserID AS orders_user_id,
-                Orders.TotalAmount AS orders_total_amount,
-                Orders.OrderDate AS orders_order_date,
+                orders.OrderID AS orders_id,
+                orders.UserID AS orders_user_id,
+                orders.TotalAmount AS orders_total_amount,
+                orders.OrderDate AS orders_order_date,
 
-                Users.UsersID AS users_id,
-                Users.Name AS users_name,
-                Users.Email AS users_email,
-                Users.is_admin AS users_is_admin,
+                users.UsersID AS users_id,
+                users.Name AS users_name,
+                users.Email AS users_email,
+                users.is_admin AS users_is_admin,
 
-                OrderDetails.OrderDetailID AS order_details_id,
-                OrderDetails.OrderID AS order_details_order_id,
-                OrderDetails.BookID AS order_details_book_id,
-                OrderDetails.Quantity AS order_details_quantity,
-                OrderDetails.Price AS order_details_price,
+                orderDetails.OrderDetailID AS order_details_id,
+                orderDetails.OrderID AS order_details_order_id,
+                orderDetails.BookID AS order_details_book_id,
+                orderDetails.Quantity AS order_details_quantity,
+                orderDetails.Price AS order_details_price,
 
-                Books.BookID AS books_id,
-                Books.Title AS books_title,
-                Books.Author AS books_author,
-                Books.Price AS books_price
+                books.BookID AS books_id,
+                books.Title AS books_title,
+                books.Author AS books_author,
+                books.Price AS books_price
 
-            FROM Orders
-            LEFT JOIN Users ON Orders.UserID = Users.UsersID
-            LEFT JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
-            LEFT JOIN Books ON OrderDetails.BookID = Books.BookID
-            ORDER BY Orders.OrderID ASC
+            FROM orders
+            LEFT JOIN users ON orders.UserID = users.UsersID
+            LEFT JOIN orderdetails ON drders.OrderID = orderdetails.OrderID
+            LEFT JOIN books ON orderdetails.BookID = books.BookID
+            ORDER BY orders.OrderID ASC
         ";
 
         $stmt = $this->connection->prepare($sql);
@@ -53,7 +53,7 @@ class OrdersDao extends BaseDao
     public function createOrder($userId, $totalAmount, $orderItems = [])
     {
         // Insert the order
-        $sql = "INSERT INTO Orders (UserID, TotalAmount, OrderDate) VALUES (:user_id, :total_amount, NOW())";
+        $sql = "INSERT INTO orders (UserID, TotalAmount, OrderDate) VALUES (:user_id, :total_amount, NOW())";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->bindParam(':total_amount', $totalAmount);
@@ -64,7 +64,7 @@ class OrdersDao extends BaseDao
 
         // Insert order items
         if (!empty($orderItems)) {
-            $sql = "INSERT INTO OrderDetails (OrderID, BookID, Quantity, Price) VALUES (:order_id, :book_id, :quantity, :price)";
+            $sql = "INSERT INTO orderdetails (OrderID, BookID, Quantity, Price) VALUES (:order_id, :book_id, :quantity, :price)";
             $stmt = $this->connection->prepare($sql);
 
             foreach ($orderItems as $item) {
@@ -87,7 +87,7 @@ class OrdersDao extends BaseDao
         $sql = "SELECT 
                 COUNT(*) as total_orders, 
                 COALESCE(SUM(TotalAmount), 0) as total_revenue 
-            FROM Orders";
+            FROM orders";
 
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
@@ -102,7 +102,7 @@ class OrdersDao extends BaseDao
         $sql = "
             SELECT
                *
-            FROM Orders 
+            FROM orders 
         ";
 
         $stmt = $this->connection->prepare($sql);

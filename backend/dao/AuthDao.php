@@ -20,7 +20,7 @@ class AuthDao extends BaseDao
 
     public function register($email, $password)
     {
-        $sql = "INSERT INTO Users (email, password) VALUES (:email, :password)";
+        $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
 
         $stmt = $this->connection->prepare($sql);
 
