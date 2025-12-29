@@ -15,7 +15,7 @@ class Database
         if (self::$connection === null) {
             try {
                 self::$connection = new PDO(
-                    "mysql:host=" . Config::DATABASE_HOST() . ";dbname=" . Config::DATABASE_NAME(),
+                    "mysql:host=" . Config::DATABASE_HOST() . ";dbname=" . Config::DATABASE_NAME() . ";port=" . Config::DATABASE_PORT(),
                     Config::DATABASE_USERNAME(),
                     Config::DATABASE_PASSWORD(),
                     [
