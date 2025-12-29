@@ -38,7 +38,7 @@ let OrderService = {
     }, 0);
 
     const orderData = {
-      UsersID: userId,
+      UserID: userId,
       TotalAmount: orderTotal,
       items: cartItems
     };
