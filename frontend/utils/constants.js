@@ -1,3 +1,3 @@
 let Constants = {
-  PROJECT_BASE_URL: "http://localhost/web/backend/",
+  PROJECT_BASE_URL: "https://web-backend-gcud4.ondigitalocean.app/",
 };

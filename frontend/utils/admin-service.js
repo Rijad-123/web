@@ -4,7 +4,7 @@ let AdminService = {
     initializeTotalStats: function () {
         const token = localStorage.getItem('user_token');
 
-        fetch('http://localhost/web/backend/admin/stats', {
+        fetch(Constants.PROJECT_BASE_URL + '/stats', {
             headers: {
                 'Authentication': token
             }

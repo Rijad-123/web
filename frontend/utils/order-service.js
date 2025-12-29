@@ -46,7 +46,7 @@ let OrderService = {
 
     console.log("Sending Order:", orderData);
 
-    return fetch('http://localhost/web/backend/orders', {
+    return fetch(Constants.PROJECT_BASE_URL + 'orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
