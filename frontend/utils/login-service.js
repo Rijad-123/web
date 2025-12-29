@@ -71,13 +71,14 @@ let LoginService = {
   },
 
   isUserLoggedIn: function () {
+
+
+    console.log("??");
     const userToken = localStorage.getItem("user_token");
 
-    if (!userToken) {
-      return false;
-    }
+    return userToken;
 
-    return true;
+
   },
 
   register: function () {

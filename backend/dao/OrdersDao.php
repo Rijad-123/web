@@ -23,7 +23,7 @@ class OrdersDao extends BaseDao
                 Users.UsersID AS users_id,
                 Users.Name AS users_name,
                 Users.Email AS users_email,
-                Users.IsAdmin AS users_is_admin,
+                Users.is_admin AS users_is_admin,
 
                 OrderDetails.OrderDetailID AS order_details_id,
                 OrderDetails.OrderID AS order_details_order_id,
@@ -37,9 +37,9 @@ class OrdersDao extends BaseDao
                 Books.Price AS books_price
 
             FROM Orders
-            INNER JOIN Users ON Orders.UserID = Users.UsersID
-            INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
-            INNER JOIN Books ON OrderDetails.BookID = Books.BookID
+            LEFT JOIN Users ON Orders.UserID = Users.UsersID
+            LEFT JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+            LEFT JOIN Books ON OrderDetails.BookID = Books.BookID
             ORDER BY Orders.OrderID ASC
         ";
 
@@ -70,7 +70,7 @@ class OrdersDao extends BaseDao
             foreach ($orderItems as $item) {
                 $stmt->bindParam(':order_id', $orderId, PDO::PARAM_INT);
                 $stmt->bindParam(':book_id', $item['BookID'], PDO::PARAM_INT);
-                $stmt->bindParam(':quantity', $item['Quantity'], PDO::PARAM_INT);
+                $stmt->bindParam(':quantity', $item['quantity'], PDO::PARAM_INT);
                 $stmt->bindParam(':price', $item['Price']);
                 $stmt->execute();
             }
@@ -101,53 +101,14 @@ class OrdersDao extends BaseDao
     {
         $sql = "
             SELECT
-                o.OrderID as order_id,
-                o.UserID as user_id,
-                o.TotalAmount as total_amount,
-                o.OrderDate as order_date,
-                od.OrderDetailID as detail_id,
-                od.BookID as book_id,
-                od.Quantity as quantity,
-                od.Price as price,
-                b.Title as book_title,
-                b.Author as book_author
-            FROM Orders o
-            LEFT JOIN OrderDetails od ON o.OrderID = od.OrderID
-            LEFT JOIN Books b ON od.BookID = b.BookID
-            WHERE o.OrderID = :order_id
+               *
+            FROM Orders 
         ";
 
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindParam(':order_id', $orderId, PDO::PARAM_INT);
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if (empty($results)) {
-            return null;
-        }
-
-        // Format the response
-        $order = [
-            'OrderID' => $results[0]['order_id'],
-            'UserID' => $results[0]['user_id'],
-            'TotalAmount' => $results[0]['total_amount'],
-            'OrderDate' => $results[0]['order_date'],
-            'items' => []
-        ];
-
-        foreach ($results as $row) {
-            if ($row['detail_id']) {
-                $order['items'][] = [
-                    'OrderDetailID' => $row['detail_id'],
-                    'BookID' => $row['book_id'],
-                    'BookTitle' => $row['book_title'],
-                    'BookAuthor' => $row['book_author'],
-                    'Price' => $row['price'],
-                    'Quantity' => $row['quantity']
-                ];
-            }
-        }
-
-        return $order;
+        return $results;
     }
 }

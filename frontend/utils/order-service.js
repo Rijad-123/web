@@ -12,8 +12,9 @@ let OrderService = {
     // Decode the JWT token to get user_id
     const decoded = jwt_decode(token);
 
+    console.log("DECODED:", decoded)
     // FIX: matched the property name from your console log (UsersID)
-    const userId = decoded.user.UsersID;
+    const userId = decoded.user.user_id;
 
     console.log("Decoded ID:", userId); // Should log: 11
 
@@ -45,11 +46,10 @@ let OrderService = {
 
     console.log("Sending Order:", orderData);
 
-    return fetch('http://localhost/web/backend/admin/orders', {
+    return fetch('http://localhost/web/backend/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authentication': token // You likely need to send the token here too!
       },
       body: JSON.stringify(orderData)
     })
@@ -60,17 +60,10 @@ let OrderService = {
         if (data.success || data.id) { // Adjust based on your API success response
           console.log('Order created successfully:', data);
 
-          // Assuming 'Cart' is your cart service variable name
-          if (typeof CartService !== 'undefined') {
-            CartService.clearCart();
-            // Note: You usually don't loadCart() immediately after clearing it
-            CartService.updateCartCount();
-          } else if (typeof Cart !== 'undefined') {
-            // Fallback if your service is named 'Cart'
             localStorage.removeItem('cart');
-          }
 
           toastr.success('Order placed successfully!');
+
           return data;
         } else {
           console.error('Error from server:', data.error);

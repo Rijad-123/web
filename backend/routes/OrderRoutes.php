@@ -136,7 +136,7 @@ Flight::route('GET /admin/orders/@id', function ($orderId) {
  *     operationId="createOrder",
  *     tags={"Admin Orders"},
  *     summary="Create a new order (Admin only)",
- *     description="Creates a new order with order details. Requires admin authentication.",
+ *     description="Creates a new order with order details. ",
  *     security={{"bearerAuth":{}}},
  *     @OA\RequestBody(
  *         required=true,
@@ -179,10 +179,12 @@ Flight::route('GET /admin/orders/@id', function ($orderId) {
  *     )
  * )
  */
-Flight::route('POST /admin/orders', function () {
+Flight::route('POST /orders', function () {
     try {
         $rawBody = Flight::request()->getBody();
         $data = json_decode($rawBody, true);
+
+
 
         if ($data === null) {
             throw new Exception("Invalid JSON received");

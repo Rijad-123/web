@@ -29,7 +29,7 @@ class AuthMiddleware
     public function verifyIsAdmin()
     {
         $user = Flight::get('user');
-        if ($user->IsAdmin === 0) {
+        if ($user->is_admin === 0) {
             Flight::halt(403, 'Access denied: User is NOT admin.');
         }
 

@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="History">
+    <option name="requestHistoryStates">
+      <list>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962440769" />
+          <option name="id" value="7348eeaf-e347-472c-bde5-81e54f4c4861" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 22:54:00 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=99" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="7348eeaf-e347-472c-bde5-81e54f4c4861" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="14" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962440973" />
+          <option name="id" value="3168102f-fb56-4fda-a02a-5db6a08c37de" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 22:54:00 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=98" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="3168102f-fb56-4fda-a02a-5db6a08c37de" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="26" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962441162" />
+          <option name="id" value="20b74a3b-c040-4850-a125-3385d22e87b8" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 22:54:01 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=97" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="20b74a3b-c040-4850-a125-3385d22e87b8" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="23" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962441359" />
+          <option name="id" value="3f339a17-d7cf-4a35-bf0c-bb70f1c0ab33" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 22:54:01 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=96" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="3f339a17-d7cf-4a35-bf0c-bb70f1c0ab33" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="4" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962441632" />
+          <option name="id" value="c7b2eb7e-f5a9-402f-9bf7-45bb94f80b03" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 22:54:01 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=95" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="c7b2eb7e-f5a9-402f-9bf7-45bb94f80b03" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="14" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962817227" />
+          <option name="id" value="57011419-8305-4e05-a14a-6867b7aa4ff4" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="2" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 23:00:17 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=100" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="57011419-8305-4e05-a14a-6867b7aa4ff4" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="27" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766962922733" />
+          <option name="id" value="21bee5ec-bf36-47c8-9a8b-954d50a9f323" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W3siT3JkZXJJRCI6MSwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjI4OjU1IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6MiwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMwOjA4IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6MywiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMxOjQ1IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6NCwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMyOjE4IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6NSwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMyOjIxIiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6NiwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMyOjM4IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6NywiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMzOjE0IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6OCwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMzOjM5IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6OSwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjMzOjU5IiwiVG90YWxBbW91bnQiOiI1NS40OSJ9LHsiT3JkZXJJRCI6MTAsIlVzZXJJRCI6OCwiT3JkZXJEYXRlIjoiMjAyNS0xMi0yOCAyMzozNTozMCIsIlRvdGFsQW1vdW50IjoiNTUuNDkifSx7Ik9yZGVySUQiOjExLCJVc2VySUQiOjgsIk9yZGVyRGF0ZSI6IjIwMjUtMTItMjggMjM6MzU6NDkiLCJUb3RhbEFtb3VudCI6IjE4LjUwIn0seyJPcmRlcklEIjoxMiwiVXNlcklEIjo4LCJPcmRlckRhdGUiOiIyMDI1LTEyLTI4IDIzOjM1OjUzIiwiVG90YWxBbW91bnQiOiIxOC41MCJ9LHsiT3JkZXJJRCI6MTMsIlVzZXJJRCI6OCwiT3JkZXJEYXRlIjoiMjAyNS0xMi0yOCAyMzozNzoyNyIsIlRvdGFsQW1vdW50IjoiMTguNTAifSx7Ik9yZGVySUQiOjE0LCJVc2VySUQiOjgsIk9yZGVyRGF0ZSI6IjIwMjUtMTItMjggMjM6NDU6MDciLCJUb3RhbEFtb3VudCI6IjY2LjQ5In1d" />
+              <option name="bodyString" value="[&#10;  {&#10;    &quot;OrderID&quot;: 1,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:28:55&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 2,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:30:08&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 3,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:31:45&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 4,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:32:18&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 5,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:32:21&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 6,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:32:38&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 7,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:33:14&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 8,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:33:39&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 9,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:33:59&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 10,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:35:30&quot;,&#10;    &quot;TotalAmount&quot;: &quot;55.49&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 11,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:35:49&quot;,&#10;    &quot;TotalAmount&quot;: &quot;18.50&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 12,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:35:53&quot;,&#10;    &quot;TotalAmount&quot;: &quot;18.50&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 13,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:37:27&quot;,&#10;    &quot;TotalAmount&quot;: &quot;18.50&quot;&#10;  },&#10;  {&#10;    &quot;OrderID&quot;: 14,&#10;    &quot;UserID&quot;: 8,&#10;    &quot;OrderDate&quot;: &quot;2025-12-28 23:45:07&quot;,&#10;    &quot;TotalAmount&quot;: &quot;66.49&quot;&#10;  }&#10;]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 23:02:02 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="1140" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=100" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="21bee5ec-bf36-47c8-9a8b-954d50a9f323" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[{&quot;OrderID&quot;:1,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:28:55&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:2,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:30:08&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:3,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:31:45&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:4,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:32:18&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:5,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:32:21&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:6,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:32:38&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:7,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:33:14&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:8,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:33:39&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:9,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:33:59&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:10,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:35:30&quot;,&quot;TotalAmount&quot;:&quot;55.49&quot;},{&quot;OrderID&quot;:11,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:35:49&quot;,&quot;TotalAmount&quot;:&quot;18.50&quot;},{&quot;OrderID&quot;:12,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:35:53&quot;,&quot;TotalAmount&quot;:&quot;18.50&quot;},{&quot;OrderID&quot;:13,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:37:27&quot;,&quot;TotalAmount&quot;:&quot;18.50&quot;},{&quot;OrderID&quot;:14,&quot;UserID&quot;:8,&quot;OrderDate&quot;:&quot;2025-12-28 23:45:07&quot;,&quot;TotalAmount&quot;:&quot;66.49&quot;}]" />
+              <option name="size" value="1140" />
+              <option name="time" value="21" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766963168829" />
+          <option name="id" value="71bb0a86-f913-48c5-a2aa-565eb55666a7" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="eyJzdWNjZXNzIjpmYWxzZSwiZXJyb3IiOiJTUUxTVEFURVs0MjAwMF06IFN5bnRheCBlcnJvciBvciBhY2Nlc3MgdmlvbGF0aW9uOiAxMDY0IFlvdSBoYXZlIGFuIGVycm9yIGluIHlvdXIgU1FMIHN5bnRheDsgY2hlY2sgdGhlIG1hbnVhbCB0aGF0IGNvcnJlc3BvbmRzIHRvIHlvdXIgTXlTUUwgc2VydmVyIHZlcnNpb24gZm9yIHRoZSByaWdodCBzeW50YXggdG8gdXNlIG5lYXIgJ1x1MjUwMlxyXG5cdTI1MDIgICAgICBJTk5FUiBKT0lOIE9yZGVyRGV0YWlscyBPTiBPcmRlcnMuT3JkZXJJRCA9IE9yZGVyRGV0YWlscy5PcmRlcklEICAnIGF0IGxpbmUgMjQifQ==" />
+              <option name="bodyString" value="{&#10;  &quot;success&quot;: false,&#10;  &quot;error&quot;: &quot;SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '│\r\n│      INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID  ' at line 24&quot;&#10;}" />
+              <option name="code" value="500" />
+              <option name="connectionEstablishingTime" value="2" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 23:06:08 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="319" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="close" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="71bb0a86-f913-48c5-a2aa-565eb55666a7" />
+              <option name="message" value="Internal Server Error" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="{&quot;success&quot;:false,&quot;error&quot;:&quot;SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\u2502\r\n\u2502      INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID  ' at line 24&quot;}" />
+              <option name="size" value="319" />
+              <option name="time" value="17" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766963223829" />
+          <option name="id" value="afdcd390-454d-4705-a5ee-ba47d18d98df" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="2" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 23:07:03 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=100" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="afdcd390-454d-4705-a5ee-ba47d18d98df" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="24" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+        <requestHistoryState>
+          <option name="dateTime" value="1766963234065" />
+          <option name="id" value="3214b463-0f28-424f-a747-68d7a1bc3e3e" />
+          <option name="request">
+            <requestState>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Authentication" />
+                    <option name="value" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7IlVzZXJzSUQiOjIsIk5hbWUiOiJBZG1pbiBVc2VyIiwiRW1haWwiOiJhZG1pbkBib29rc2hvcC5jb20iLCJBZGRyZXNzIjoiQWRtaW5MYW5kIiwiaXNfYWRtaW4iOjF9LCJpYXQiOjE3NjY5NjIwMDMsImV4cCI6MTc2NzA0ODQwM30.kPH3yBsELkGraWceRNfJ1OQu7OgEK4577jPK-5tqQro" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="f15fd9f8-95a2-4054-ac8d-84fb6bb74ca6" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft" />
+              <option name="url" value="http://localhost/web/backend/admin/orders" />
+            </requestState>
+          </option>
+          <option name="response">
+            <responseState>
+              <option name="bodyBytesBase64" value="W10=" />
+              <option name="bodyString" value="[]" />
+              <option name="code" value="200" />
+              <option name="connectionEstablishingTime" value="1" />
+              <option name="contentType" value="application/json" />
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Date" />
+                    <option name="value" value="Sun, 28 Dec 2025 23:07:14 GMT" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Server" />
+                    <option name="value" value="Apache/2.4.65 (Win64) PHP/8.5.0 mod_fcgid/2.3.10-dev" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="X-Powered-By" />
+                    <option name="value" value="PHP/8.5.0" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Origin" />
+                    <option name="value" value="*" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Methods" />
+                    <option name="value" value="GET, POST, PUT, DELETE, PATCH, OPTIONS" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Allow-Headers" />
+                    <option name="value" value="Content-Type, Authentication, Authorization" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Access-Control-Max-Age" />
+                    <option name="value" value="86400" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Length" />
+                    <option name="value" value="2" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Keep-Alive" />
+                    <option name="value" value="timeout=5, max=100" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Connection" />
+                    <option name="value" value="Keep-Alive" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="3214b463-0f28-424f-a747-68d7a1bc3e3e" />
+              <option name="message" value="OK" />
+              <option name="prettyResponseType" value="JSON" />
+              <option name="rawBodyString" value="[]" />
+              <option name="size" value="2" />
+              <option name="time" value="4" />
+            </responseState>
+          </option>
+          <option name="workspaceId" value="drafts" />
+        </requestHistoryState>
+      </list>
+    </option>
+  </component>
+</project>

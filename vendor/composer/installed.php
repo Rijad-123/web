@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'root/web',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '47c72d73e5a119783fb4efe31640d1112c7d08a2',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -47,9 +47,9 @@
             'dev_requirement' => false,
         ),
         'flightphp/core' => array(
-            'pretty_version' => 'v3.17.2',
-            'version' => '3.17.2.0',
-            'reference' => '095a46663f7090c549f5c3459f0dada893b3b5d9',
+            'pretty_version' => 'v3.17.4',
+            'version' => '3.17.4.0',
+            'reference' => '183390718182b4ac958bf0642115432efb199228',
             'type' => 'library',
             'install_path' => __DIR__ . '/../flightphp/core',
             'aliases' => array(),
@@ -80,9 +80,9 @@
             'dev_requirement' => false,
         ),
         'root/web' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '47c72d73e5a119783fb4efe31640d1112c7d08a2',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

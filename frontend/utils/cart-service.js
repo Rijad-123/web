@@ -1,7 +1,12 @@
 let CartService = {
   // Initialize cart from localStorage or empty array
   getCart: function () {
+
+    console.log("WHAT is going on")
+
     const cart = localStorage.getItem("cart");
+
+    console.log(cart)
     return cart ? JSON.parse(cart) : [];
   },
 
@@ -27,7 +32,7 @@ let CartService = {
       } else {
         cart.push({
           ...book,
-          quantity: quantity
+          Quantity: quantity
         });
         toastr.success(`${book.Title} added to cart!`);
       }

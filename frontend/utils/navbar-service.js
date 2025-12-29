@@ -9,7 +9,7 @@ let NavbarService = {
 
     const decodedToken = jwt_decode(userToken);
 
-    const isAdmin = decodedToken.user.IsAdmin;
+    const isAdmin = decodedToken.user.is_admin;
 
     if (isAdmin === 1) {
       console.log("ADMIN LOGGED IN!");
