@@ -14,7 +14,7 @@ let OrderService = {
 
     console.log("DECODED:", decoded)
     // FIX: matched the property name from your console log (UsersID)
-    const userId = decoded.user.user_id;
+    const userId = decoded.user.UsersID;
 
     console.log("Decoded ID:", userId); // Should log: 11
 
@@ -38,7 +38,7 @@ let OrderService = {
     }, 0);
 
     const orderData = {
-      UserID: userId,
+      UsersID: userId,
       TotalAmount: orderTotal,
       items: cartItems
     };
