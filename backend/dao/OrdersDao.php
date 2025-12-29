@@ -38,7 +38,7 @@ class OrdersDao extends BaseDao
 
             FROM orders
             LEFT JOIN users ON orders.UserID = users.UsersID
-            LEFT JOIN orderdetails ON drders.OrderID = orderdetails.OrderID
+            LEFT JOIN orderdetails ON orders.OrderID = orderdetails.OrderID
             LEFT JOIN books ON orderdetails.BookID = books.BookID
             ORDER BY orders.OrderID ASC
         ";
