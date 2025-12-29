@@ -7,7 +7,7 @@ class AuthDao extends BaseDao
 
     public function __construct()
     {
-        parent::__construct('Users');
+        parent::__construct('users');
     }
 
     public function getUserByEmail($email)
