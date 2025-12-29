@@ -2,7 +2,7 @@
 
 
 // Imports vendor packages
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . '/vendor/autoload.php';
 
 // CORS Headers - Must be set before any output
 header('Access-Control-Allow-Origin: *');
