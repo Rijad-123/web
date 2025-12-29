@@ -25,11 +25,11 @@ class OrdersDao extends BaseDao
                 users.Email AS users_email,
                 users.is_admin AS users_is_admin,
 
-                orderDetails.OrderDetailID AS order_details_id,
-                orderDetails.OrderID AS order_details_order_id,
-                orderDetails.BookID AS order_details_book_id,
-                orderDetails.Quantity AS order_details_quantity,
-                orderDetails.Price AS order_details_price,
+                orderdetails.OrderDetailID AS order_details_id,
+                orderdetails.OrderID AS order_details_order_id,
+                orderdetails.BookID AS order_details_book_id,
+                orderdetails.Quantity AS order_details_quantity,
+                orderdetails.Price AS order_details_price,
 
                 books.BookID AS books_id,
                 books.Title AS books_title,
