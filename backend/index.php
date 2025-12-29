@@ -2,7 +2,7 @@
 
 
 // Imports vendor packages
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . '/vendor/autoload.php';
 
 // CORS Headers - Must be set before any output
 header('Access-Control-Allow-Origin: *');
@@ -35,7 +35,9 @@ Flight::before('start', function () {
         strpos($url, '/auth/login') === 0 ||
         strpos($url, '/auth/register') === 0 ||
         strpos($url, '/categories') === 0 ||
-        strpos($url, '/books') === 0
+        strpos($url, '/books') === 0 ||
+        strpos($url, '/orders') === 0
+
     ) {
         return;
     }

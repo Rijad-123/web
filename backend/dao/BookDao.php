@@ -4,7 +4,7 @@ require_once __DIR__ . '/BaseDao.php';
 
 class BookDao extends BaseDao
 {
-    protected $table_name = 'Books';
+    protected $table_name = 'books';
 
     public function __construct()
     {
@@ -31,7 +31,7 @@ class BookDao extends BaseDao
 
     public function getBookById($BookId)
     {
-        $sql = "SELECT * FROM Books WHERE Books.BookID = :BookID";
+        $sql = "SELECT * FROM books WHERE books.BookID = :BookID";
         
         $statement = $this->connection->prepare($sql);
 

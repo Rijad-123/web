@@ -1,0 +1,6 @@
+Link:
+https://web-frontend-fktqm.ondigitalocean.app/#view_main
+
+Username:
+Admin : admin1@bookshop.com
+Password : Admin37!

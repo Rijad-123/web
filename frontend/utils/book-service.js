@@ -97,11 +97,7 @@ let BookService = {
   getBookById: function (bookId) {
     RestClient.get(`books/book/${bookId}`, function (book) {
       const bookDetails = document.getElementById("book-detail-section");
-
-
-      console.log("Test123!!!");
-
-
+      
       const isLoggedIn = LoginService.isUserLoggedIn();
 
       if (isLoggedIn === true) {
@@ -241,9 +237,7 @@ let BookService = {
             <p class="book-author">${book.Author}</p>
             <div class="book-price">$${book.Price}</div>
             <div class="book-actions">
-              <button class="btn-details" onclick="BookService.getBookById(${book.BookID})">
-                View Details
-              </button>
+             
               ${addToCartButton}
             </div>
           </div>

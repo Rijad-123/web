@@ -13,6 +13,14 @@ $(document).ready(function () {
     app.route({
       view: "view_book",
       load: "view_book.html",
+      onReady: function() {
+        // Parse the book ID from the hash
+        const params = new URLSearchParams(location.hash.split('?')[1]);
+        const bookId = params.get('id');
+        if (bookId) {
+          BookService.getBookById(bookId);
+        }
+      }
     });
 
     app.route({
@@ -40,6 +48,14 @@ $(document).ready(function () {
     app.route({
       view: "view_book",
       load: "view_book.html",
+      onReady: function() {
+        // Parse the book ID from the hash
+        const params = new URLSearchParams(location.hash.split('?')[1]);
+        const bookId = params.get('id');
+        if (bookId) {
+          BookService.getBookById(bookId);
+        }
+      }
     });
 
     app.route({
@@ -65,7 +81,7 @@ $(document).ready(function () {
 
 
     const token = jwt_decode(userToken);
-    const userID = token.user.IsAdmin;
+    const userID = token.user.is_admin;
 
 
 

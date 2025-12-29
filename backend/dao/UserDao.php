@@ -4,7 +4,7 @@ require_once __DIR__ . '/BaseDao.php';
 
 class UserDao extends BaseDao
 {
-    protected $table_name = 'Users';
+    protected $table_name = 'users';
 
 
     public function __construct()
@@ -32,7 +32,7 @@ class UserDao extends BaseDao
 
     public function getUserOrders($user_ID)
     {
-        $sql = 'SELECT * FROM Orders WHERE UserseleID = :user_ID';
+        $sql = 'SELECT * FROM Orders WHERE UsereleID = :user_ID';
 
         $statement = $this->connection->prepare($sql);
 
